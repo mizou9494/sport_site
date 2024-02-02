@@ -1,0 +1,29 @@
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.navbar {
+    max-width: 800px;
+    display: flex;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 3px 50px;
+    background-color: rgb(36, 40, 38);
+    border-bottom: 5px solid hsla(59, 100%, 49%);
+}
+
+li {
+    text-align: center;
+    width: 100%;
+    list-style: none;
+    padding: 25px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li:hover {
+    color: yellowgreen;
+}
