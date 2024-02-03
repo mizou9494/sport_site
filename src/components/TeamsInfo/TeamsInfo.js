@@ -43,7 +43,7 @@ function TeamsInfo() {
           <p>The logo of the club is this :
             <img alt='club-logo' src={logo} />
           </p> 
-          <p>name: <strong> {name}</strong></p>
+          <p>name: <strong>{name}</strong></p>
           <p>nickname: {nickname}</p>
           <p>city: {city}</p>
         </div>

@@ -5,7 +5,7 @@
 
 .infos {
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 20px;
     display: flex;
     max-width: fit-content;
     flex-direction: column;
