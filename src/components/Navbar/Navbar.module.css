@@ -1,11 +1,12 @@
 .wrapper {
-    position: fixed;
+    position: sticky;
     width: 100%;
     margin: 0 auto;
 }
 
 .navbar {
-    max-width: 800px;
+    position: relative;
+    max-width: 1200px;
     display: flex;
     align-items: flex-start;
     margin: 0 auto;
@@ -18,7 +19,7 @@ li {
     text-align: center;
     width: 100%;
     list-style: none;
-    padding: 25px;
+    padding: 15px 25px;
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;

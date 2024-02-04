@@ -1,19 +1,30 @@
 import React from 'react'
 
+import * as Tooltip from '@radix-ui/react-tooltip'
 import { ChevronUp, ChevronDown } from 'react-feather'
 
+import Submenu from '../Submenu'
+
 function Link({ id, label }) {
-    const [isClicked, setIsClicked] = React.useState(false)
+    const [isHovered, setIsHovered] = React.useState(false)
 
-    function handleLinkClicking() {
-        if(isClicked) setIsClicked(false)
-        else setIsClicked(true)
+    function handleLinkHoverEnter() {
+        if(isHovered){
+            setIsHovered(false)
+        } else {
+            setIsHovered(true)
+        } 
     }
-
   return (
-    <li onClick={handleLinkClicking} key={id}>
-        {isClicked ? <ChevronUp /> : <ChevronDown/>}
+    <li 
+        onMouseEnter={handleLinkHoverEnter} 
+        onMouseLeave={() => setIsHovered(false)} 
+        label={label}
+        key={id} 
+    >
         {label}
+        {isHovered ? <ChevronUp /> : <ChevronDown/>}
+        {isHovered && <Submenu label={label} />}
     </li>
   )
 }

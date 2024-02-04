@@ -7,12 +7,13 @@ import styles from './Navbar.module.css'
 import Link from '../Link/Link'
 
 function Navbar() {
+ 
 
   return (
     <div className={styles.wrapper}>
         <ul className={styles.navbar}>
             {navbar_links.map(({id, label}) => (
-                <Link key={id} label={label} id={id} />
+                <Link key={id}  id={id} label={label} />
             ))}
         </ul>
         {/* <hr/> */}

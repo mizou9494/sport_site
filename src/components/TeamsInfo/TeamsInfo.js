@@ -17,7 +17,7 @@ const options = {
 };
 
 function TeamsInfo() {
-    let [detailedStats, setDetailedStats] = React.useState([])
+    let [detailedNBAStats, setDetailedNBAStats] = React.useState([])
   
     React.useEffect(() => {
       const fetchData = async () => {
@@ -25,7 +25,7 @@ function TeamsInfo() {
           const responses = await fetch(api_url, options);
           const {response} = await responses.json()
           console.log('API response:', response);
-          setDetailedStats(response);
+          setDetailedNBAStats(response);
         } catch (error) {
           console.error('Error fetching data:', error);
         }
@@ -35,10 +35,10 @@ function TeamsInfo() {
 
   return (
     <div className={styles.wrapper}>
-      {detailedStats?.map(({ id, name, nickname, city, logo  }) => (
+      {detailedNBAStats?.map(({ id, name, nickname, city, logo  }) => (
         <div 
           key={id}
-          className={styles.infos} 
+          className={styles.infoBlock} 
         >
           <p>The logo of the club is this :
             <img alt='club-logo' src={logo} />
