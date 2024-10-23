@@ -7,7 +7,6 @@ import styles from './Navbar.module.css'
 import Link from '../Link/Link'
 
 function Navbar() {
- 
 
   return (
     <div className={styles.wrapper}>
@@ -16,7 +15,6 @@ function Navbar() {
                 <Link key={id}  id={id} label={label} />
             ))}
         </ul>
-        {/* <hr/> */}
     </div>
   )
 }

@@ -20,8 +20,18 @@
   /*
     3. Allow percentage-based heights in the application
   */
-  html, body {
+  html, body, #root, .App {
     height: 100%;
+    width: 100%;
+  }
+  
+  .App {
+    max-width: min(100%, 1400px);
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: x-large;
   }
   
   /*

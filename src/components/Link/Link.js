@@ -1,30 +1,66 @@
 import React from 'react'
 
-import * as Tooltip from '@radix-ui/react-tooltip'
-import { ChevronUp, ChevronDown } from 'react-feather'
+// import * as Tooltip from '@radix-ui/react-tooltip'
+import { ChevronUp, ChevronDown, Search, X } from 'react-feather'
+
+import Boop from '../../effects/Boop'
+
+import styles from './Link.module.css'
 
 import Submenu from '../Submenu'
 
 function Link({ id, label }) {
-    const [isHovered, setIsHovered] = React.useState(false)
+    const [isClicked, setIsClicked] = React.useState(false)
 
-    function handleLinkHoverEnter() {
-        if(isHovered){
-            setIsHovered(false)
-        } else {
-            setIsHovered(true)
-        } 
+    function handleLinkClick() {
+        setIsClicked(!isClicked) 
     }
+
+    if( label === "Home" ) {
+        return (
+            <li style={{ paddingInlineEnd: '15px' }}>
+                {label}
+            </li>
+        )
+    }
+ 
+    if( label === "Search" ) {
+        return (
+            <li className={styles.search}>
+                <label>{label}</label>
+                <Boop rotation={90} timing={100}>
+                    <Search color='limegreen' strokeWidth={2.5} style={{ marginLeft:'10px' }} />
+                </Boop>
+            </li>
+        )
+    }
+    
   return (
     <li 
-        onMouseEnter={handleLinkHoverEnter} 
-        onMouseLeave={() => setIsHovered(false)} 
+        onClick={handleLinkClick} 
         label={label}
         key={id} 
     >
-        {label}
-        {isHovered ? <ChevronUp /> : <ChevronDown/>}
-        {isHovered && <Submenu label={label} />}
+        <label>{label}</label>
+        {isClicked 
+            ? 
+                <ChevronUp 
+                    strokeWidth={1.5} 
+                    style={{ 
+                        transform: isClicked ? `rotate(0deg)` : `rotate(180deg)`, 
+                        transition: 'transform 250ms' 
+                    }} 
+                /> 
+            : 
+                <ChevronUp 
+                    strokeWidth={1.5} 
+                    style={{ 
+                        transform: !isClicked ? 'rotate(180deg)' : 'rotate(0deg)', 
+                        transition: 'transform 250ms' 
+                    }} 
+                />
+        }
+        {isClicked && <Submenu label={label} />}
     </li>
   )
 }

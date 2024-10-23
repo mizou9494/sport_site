@@ -1,31 +1,50 @@
 .wrapper {
+    isolation: isolate;
+    z-index: 2;
     position: sticky;
+    top: 0;
+    left: 0;
     width: 100%;
     margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .navbar {
-    position: relative;
-    max-width: 1200px;
+    min-height: 80px;
+    min-width: max-content;
+    /* max-width: 1200px; */
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     margin: 0 auto;
-    padding: 3px 50px;
+    padding: 0px 30px 0px 20px;
     background-color: rgb(36, 40, 38);
     border-bottom: 5px solid hsla(59, 100%, 49%);
 }
 
-li {
+
+.navbar > li {
+    flex: 1 1 100px;
+    position: relative;
     text-align: center;
-    width: 100%;
-    list-style: none;
-    padding: 15px 25px;
-    color: rgb(255, 255, 255);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 3px;
+    list-style: none;
+    padding: 10px 5px;
+    color: rgb(255, 255, 255);    
 }
 
-li:hover {
+.navbar > li svg {
+    display: inline;
+    /* float: bottom; */
+    align-self: flex-end;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+}
+
+.navbar > li:hover {
     color: yellowgreen;
 }
