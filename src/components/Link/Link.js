@@ -9,12 +9,15 @@ import styles from './Link.module.css'
 
 import Submenu from '../Submenu'
 
-function Link({ id, label }) {
-    const [isClicked, setIsClicked] = React.useState(false)
+function Link({ id, label, activeSubmenu, onClick, children }) {
+    // const [isClicked, setIsClicked] = React.useState(false)
 
-    function handleLinkClick() {
-        setIsClicked(!isClicked) 
-    }
+
+    // Function to toggle submenu visibility
+    
+    // function handleLinkClick() {
+    //     setIsClicked(!isClicked) 
+    // }
 
     if( label === "Home" ) {
         return (
@@ -37,30 +40,30 @@ function Link({ id, label }) {
     
   return (
     <li 
-        onClick={handleLinkClick} 
-        label={label}
-        key={id} 
-    >
+        className={styles.link}
+        label={label} 
+        onClick={onClick}
+    >   
         <label>{label}</label>
-        {isClicked 
+        {activeSubmenu   
             ? 
                 <ChevronUp 
                     strokeWidth={1.5} 
-                    style={{ 
-                        transform: isClicked ? `rotate(0deg)` : `rotate(180deg)`, 
-                        transition: 'transform 250ms' 
-                    }} 
+                    // style={{ 
+                    //     transform: activeSubmenu === id  ? `rotate(0deg)` : `rotate(180deg)`, 
+                    //     transition: 'transform 250ms' 
+                    // }} 
                 /> 
             : 
-                <ChevronUp 
+                <ChevronDown 
                     strokeWidth={1.5} 
-                    style={{ 
-                        transform: !isClicked ? 'rotate(180deg)' : 'rotate(0deg)', 
-                        transition: 'transform 250ms' 
-                    }} 
+                    // style={{ 
+                    //     transform: !activeSubmenu === id  ? 'rotate(180deg)' : 'rotate(0deg)', 
+                    //     transition: 'transform 250ms' 
+                    // }} 
                 />
         }
-        {isClicked && <Submenu label={label} />}
+        {children}
     </li>
   )
 }
