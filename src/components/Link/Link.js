@@ -9,9 +9,8 @@ import styles from './Link.module.css'
 
 import Submenu from '../Submenu'
 
-function Link({ id, label, activeSubmenu, onClick, children }) {
-    // const [isClicked, setIsClicked] = React.useState(false)
-
+function Link({ id, label, isCLicked, onClick, children }) {
+    const [isClicked, setIsClicked] = React.useState(false);
 
     // Function to toggle submenu visibility
     
@@ -42,10 +41,13 @@ function Link({ id, label, activeSubmenu, onClick, children }) {
     <li 
         className={styles.link}
         label={label} 
-        onClick={onClick}
+        onClick={() => { 
+            setIsClicked(!isClicked); 
+            onClick()
+        }}
     >   
         <label>{label}</label>
-        {activeSubmenu   
+        {isCLicked  
             ? 
                 <ChevronUp 
                     strokeWidth={1.5} 

@@ -9,19 +9,10 @@ import Link from '../Link/Link'
 
 function Navbar() {
 
-  // const [activeSubmenu1, setActiveSubmenu1] = React.useState(false);
-  // const [activeSubmenu2, setActiveSubmenu2] = React.useState(false);
-  // const [activeSubmenu3, setActiveSubmenu3] = React.useState(false);
-  // const [activeSubmenu4, setActiveSubmenu4] = React.useState(false);
-  // const [activeSubmenu5, setActiveSubmenu5] = React.useState(false);
-  // const [activeSubmenu6, setActiveSubmenu6] = React.useState(false);
-  // const [activeSubmenu7, setActiveSubmenu7] = React.useState(false);
-  // const [activeSubmenu8, setActiveSubmenu8] = React.useState(false);
-  
   const [activeSubmenu, setActiveSubmenu] = React.useState(null);
 
-  const toggleSubmenu = (menuName) => {
-    setActiveSubmenu((prev) => (prev === menuName ? null : menuName)); // Open clicked submenu and close others
+  const toggleSubmenu = (menuId) => {
+    setActiveSubmenu((prev) => (prev === menuId ? null : menuId)); // Open clicked submenu and close others
   };
 
   return (
@@ -33,9 +24,9 @@ function Navbar() {
               id={id} 
               activeSubmenu 
               label={label} 
-              onClick={() => toggleSubmenu(label)}
+              onClick={() => toggleSubmenu(id)}
             >
-              {activeSubmenu === label && <Submenu label={label} />}
+              {activeSubmenu === id && <Submenu label={label} />}
             </Link>
           ))}
         </ul>
