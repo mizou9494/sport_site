@@ -1,9 +1,12 @@
 .link {
     border: 1px solid white;
     min-width: max-content;
+    z-index: 5;
+}
+
+.home {
     display: grid;
     place-content: center;
-    z-index: 5;
 }
 
 .search {

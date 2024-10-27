@@ -1,9 +1,5 @@
 export const navbar_links = [
     {
-        id: 0,
-        label: 'Home'
-    },
-    {
         id: 1,
         label: 'Seasons'
     },
@@ -30,11 +26,7 @@ export const navbar_links = [
     {
         id: 7,
         label: 'Statistics'
-    },
-    {
-        id: 8,
-        label: 'Search'
-    },
+    }
 ]
 
 export const categories = {

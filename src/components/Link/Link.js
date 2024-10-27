@@ -9,8 +9,9 @@ import styles from './Link.module.css'
 
 import Submenu from '../Submenu'
 
-function Link({ id, label, isCLicked, onClick, children }) {
-    const [isClicked, setIsClicked] = React.useState(false);
+function Link({ id, label, activeSubmenu, onClick, children }) {
+    // const [isClicked, setIsClicked] = React.useState(false)
+
 
     // Function to toggle submenu visibility
     
@@ -20,7 +21,7 @@ function Link({ id, label, isCLicked, onClick, children }) {
 
     if( label === "Home" ) {
         return (
-            <li style={{ paddingInlineEnd: '15px' }}>
+            <li className={styles.home} style={{ paddingInlineEnd: '15px' }}>
                 {label}
             </li>
         )
@@ -41,13 +42,10 @@ function Link({ id, label, isCLicked, onClick, children }) {
     <li 
         className={styles.link}
         label={label} 
-        onClick={() => { 
-            setIsClicked(!isClicked); 
-            onClick()
-        }}
+        onClick={onClick}
     >   
         <label>{label}</label>
-        {isCLicked  
+        {activeSubmenu   
             ? 
                 <ChevronUp 
                     strokeWidth={1.5} 

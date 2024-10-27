@@ -4,10 +4,16 @@
     position: sticky;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    background-color: rgb(36, 40, 38);
+    border-bottom: 5px solid hsla(59, 100%, 49%);
+    color: white;
+    list-style: none;
 }
 
 .navbar {
@@ -15,13 +21,9 @@
     min-width: max-content;
     /* max-width: 1200px; */
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    padding: 0px 30px 0px 20px;
-    background-color: rgb(36, 40, 38);
-    border-bottom: 5px solid hsla(59, 100%, 49%);
 }
 
 
@@ -34,6 +36,9 @@
     list-style: none;
     padding: 10px 5px;
     color: rgb(255, 255, 255);    
+}
+
+.navbar > li:last-of-type {
 }
 
 .navbar > li svg {

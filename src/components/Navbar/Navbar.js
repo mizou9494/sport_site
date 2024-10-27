@@ -8,15 +8,16 @@ import Submenu from '../Submenu'
 import Link from '../Link/Link'
 
 function Navbar() {
-
+  
   const [activeSubmenu, setActiveSubmenu] = React.useState(null);
 
-  const toggleSubmenu = (menuId) => {
-    setActiveSubmenu((prev) => (prev === menuId ? null : menuId)); // Open clicked submenu and close others
+  const toggleSubmenu = (menuName) => {
+    setActiveSubmenu((prev) => (prev === menuName ? null : menuName)); // Open clicked submenu and close others
   };
 
   return (
     <div className={styles.wrapper}>
+        <Link label={"Home"}></Link>
         <ul className={styles.navbar}>
           {navbar_links.map(({id, label}) => (
             <Link 
@@ -24,12 +25,13 @@ function Navbar() {
               id={id} 
               activeSubmenu 
               label={label} 
-              onClick={() => toggleSubmenu(id)}
+              onClick={() => toggleSubmenu(label)}
             >
-              {activeSubmenu === id && <Submenu label={label} />}
+              {activeSubmenu === label && <Submenu label={label} />}
             </Link>
           ))}
         </ul>
+        <Link label={"Search"}></Link>
     </div>
   )
 }
