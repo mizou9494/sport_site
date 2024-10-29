@@ -20,19 +20,18 @@
     min-height: 80px;
     min-width: max-content;
     /* max-width: 1200px; */
-    display: grid;
-    gap: 0px 5px;
-    grid-template-columns: repeat(auto-fill, min(88px, 1fr));
-    /* align-items: center;
-    justify-content: center; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .navbar > li {
+    flex: 1 1 100px;
     position: relative;
     text-align: center;
     display: flex;
-    justify-content: space-between;
     gap: 3px;
     list-style: none;
     padding: 10px 5px;

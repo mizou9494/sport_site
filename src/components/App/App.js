@@ -13,19 +13,8 @@ function App() {
     <div className={styles.App}>
       <Navbar />
       <Feed />
-      <StickyButton>
-        <Close size={100} color='blue' />
-      </StickyButton>
     </div>
   );
 }
-
-const StickyButton = styled.section`
-  width: fit-content;
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  z-index: 1;
-`
 
 export default App;

@@ -8,7 +8,7 @@ const api_url = 'https://api-nba-v1.p.rapidapi.com/teams'
 const myHeader = {
   'X-RapidAPI-Key': '937132fc89mshac1172e9ce9980ap1f7f79jsn98ababcec47d',
   'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
-} 
+}
 
 const options = {
   method: 'GET',
@@ -31,9 +31,6 @@ function extractObjectKeys(object) {
       objectsValues1 = [...objectKeys, ...extractObjectKeys(value)]
     }
   })
-  
-  // console.log(objectsValues)
-  // console.log(objectsValues1)
 
   return objectKeys;
 }
